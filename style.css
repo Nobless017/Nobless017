@@ -656,7 +656,7 @@ textarea:focus-visible {
 }
 
 .preview-three {
-    background: linear-gradient(135deg, #b45309, #f59e0b);
+    background: linear-gradient(135deg, #3730a3, #8b5cf6);
 }
 
 /* Mockup mini di dalam preview proyek */
@@ -700,67 +700,20 @@ textarea:focus-visible {
     background: #c3cfcd;
 }
 
-.mock-browser img {
+.mock-phone {
+    width: 118px;
+    border: 5px solid #111827;
+    border-bottom: 0;
+    border-radius: 22px 22px 0 0;
+}
+
+.mock-browser img,
+.mock-phone img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: top center;
-}
-
-.mock-line {
-    display: block;
-    flex: none;
-    height: 6px;
-    border-radius: 99px;
-    background: #dbe5e4;
-}
-
-.mock-line-title {
-    width: 92%;
-    height: 10px;
-    background: #172033;
-}
-
-.mock-phone {
-    width: 96px;
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-    padding: 9px 9px 0;
-    border: 4px solid #1f2937;
-    border-bottom: 0;
-    border-radius: 20px 20px 0 0;
-}
-
-.mock-notch {
-    display: block;
-    flex: none;
-    align-self: center;
-    width: 30px;
-    height: 5px;
-    border-radius: 99px;
-    background: #1f2937;
-}
-
-.mock-phone .mock-line-title {
-    width: 70%;
-}
-
-.mock-card {
-    display: block;
-    flex: none;
-    height: 34px;
-    border-radius: 9px;
-    background: linear-gradient(135deg, #fde68a, #f59e0b);
-}
-
-.mock-row {
-    display: block;
-    flex: none;
-    height: 14px;
-    border-radius: 6px;
-    background: #f1f5f9;
 }
 
 :root[data-theme="dark"] .mock-browser,
@@ -775,35 +728,6 @@ textarea:focus-visible {
 
 :root[data-theme="dark"] .mock-bar span {
     background: rgba(255, 255, 255, 0.22);
-}
-
-:root[data-theme="dark"] .mock-line {
-    background: rgba(255, 255, 255, 0.14);
-}
-
-:root[data-theme="dark"] .mock-line-title {
-    background: #e7f2f1;
-}
-
-:root[data-theme="dark"] .mock-row {
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.project-status {
-    display: inline-block;
-    margin-left: 6px;
-    padding: 2px 9px;
-    color: #92400e;
-    background: #fef3c7;
-    border-radius: 99px;
-    font-size: 12px;
-    font-weight: 800;
-    vertical-align: 1px;
-}
-
-:root[data-theme="dark"] .project-status {
-    color: #fcd34d;
-    background: rgba(245, 158, 11, 0.14);
 }
 
 .project-content {
