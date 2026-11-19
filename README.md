@@ -1,24 +1,34 @@
-# Alvin's Portfolio
+# Hi, I'm Alvin 👋
 
-Personal portfolio of Alvin, a Computer Science student in the Faculty of Engineering at Widya Mandira Catholic University, Kupang.
+Computer Science student at Widya Mandira Catholic University in Kupang, Indonesia. I build responsive websites and small web apps with HTML, CSS, and JavaScript.
 
-**Live site:** https://nobless017.github.io
+🌐 **Portfolio:** [nobless017.github.io/Nobless017](https://nobless017.github.io/Nobless017/)
 
 ## Projects
 
-| Project | What it is | Demo | Source |
-| --- | --- | --- | --- |
-| Portfolio Website | Responsive personal site with light and dark themes and a contact form powered by Formspree. | [Open](https://nobless017.github.io/) | Root of this repo |
-| Kopi Sabana | Landing page for a fictional coffee shop in Kupang, with a tabbed menu and opening hours that update in real time (WITA). | [Open](https://nobless017.github.io/projects/landing-page/) | [`projects/landing-page`](projects/landing-page) |
-| Money Tracker | Mobile-first finance tracker for students. Data is saved in the browser with `localStorage`. | [Open](https://nobless017.github.io/projects/catatan-keuangan/?demo=1) | [`projects/catatan-keuangan`](projects/catatan-keuangan) |
+- **[Portfolio Website](https://nobless017.github.io/Nobless017/)**: my personal site, with light and dark themes and a working contact form.
+- **[Kopi Sabana](https://nobless017.github.io/Nobless017/projects/landing-page/)**: landing page for a fictional coffee shop in Kupang, with a tabbed menu and live opening hours.
+- **[Money Tracker](https://nobless017.github.io/Nobless017/projects/catatan-keuangan/?demo=1)**: mobile-first finance tracker for students that saves data in the browser.
 
-## Built with
+The source code for all three lives in this repository.
 
-- HTML, CSS, and vanilla JavaScript (no frameworks, no build step)
-- [Formspree](https://formspree.io) for the contact form
-- GitHub Pages for hosting
+## Tools I use
 
-## Folder structure
+HTML · CSS · JavaScript · Git & GitHub · GitHub Pages · VS Code
+
+## Learning next
+
+React and Vue.js
+
+## Get in touch
+
+Send me a message through the [contact form](https://nobless017.github.io/Nobless017/contact.html) on my portfolio.
+
+---
+
+## About this repository
+
+This repo holds my GitHub profile README and my portfolio website, published with GitHub Pages. Everything is plain HTML, CSS, and JavaScript, with no frameworks or build step. The contact form uses [Formspree](https://formspree.io).
 
 ```
 .
@@ -30,8 +40,4 @@ Personal portfolio of Alvin, a Computer Science student in the Faculty of Engine
     └── catatan-keuangan/      # Money Tracker
 ```
 
-## Run locally
-
-Clone the repo and open `index.html` in a browser. Nothing to install.
-
-`404.html` uses paths from the site root, so it only looks right when the site is served (for example on GitHub Pages).
+To run it locally, clone the repo and open `index.html` in a browser. `404.html` uses full site paths (`/Nobless017/...`), so it only looks right on GitHub Pages.
