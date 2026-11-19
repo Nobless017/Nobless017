@@ -2,7 +2,6 @@ const root = document.documentElement;
 const themeToggle = document.querySelector(".theme-toggle");
 const themeKey = "theme";
 const colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function getPreferredTheme() {
     try {
@@ -56,7 +55,7 @@ window.addEventListener("storage", (event) => {
 });
 
 function addScrollReveals() {
-    if (reducedMotion || !("IntersectionObserver" in window)) {
+    if (!("IntersectionObserver" in window)) {
         return;
     }
 
@@ -112,7 +111,7 @@ function springTo(motion, target, delta) {
 }
 
 function addPointerEffects() {
-    if (!finePointer || reducedMotion) {
+    if (!finePointer) {
         return;
     }
 
@@ -302,7 +301,7 @@ function addActiveNavMotion() {
     });
 }
 
-if (themeToggle && !reducedMotion) {
+if (themeToggle) {
     themeToggle.addEventListener("click", () => {
         themeToggle.animate(
             [

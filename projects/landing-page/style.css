@@ -965,23 +965,3 @@ svg {
         padding: 9px 14px;
     }
 }
-
-/* Hormati pengaturan "kurangi animasi" di perangkat pengguna */
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-
-    .steam {
-        animation: none !important;
-        opacity: 0.5;
-    }
-}
