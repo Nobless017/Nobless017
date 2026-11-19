@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hubungi Alvin untuk kerja sama, proyek, atau pertanyaan seputar pengembangan web.">
+    <title>Contact | Alvin</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        (function () {
+            var theme;
+            try { theme = localStorage.getItem("theme"); } catch (error) {}
+            if (theme !== "light" && theme !== "dark") {
+                theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+            document.documentElement.dataset.theme = theme;
+        })();
+    </script>
+</head>
+<body>
+    <main class="page-shell">
+        <nav class="navbar" aria-label="Navigasi utama">
+            <a class="brand" href="index.html">Alvin<span>.</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a class="active" href="contact.html">Contact</a>
+            </div>
+            <button class="theme-toggle" type="button" aria-label="Ubah tema gelap" title="Ubah tema">🌙</button>
+        </nav>
+
+        <article class="content-card">
+            <p class="eyebrow">HUBUNGI SAYA</p>
+            <h1>Contact</h1>
+            <p>Silakan isi formulir di bawah ini untuk mengirim pesan kepada saya.</p>
+            <form class="contact-form" action="https://formspree.io/f/mppddnry" method="POST">
+                <input type="hidden" name="_subject" value="Pesan baru dari website portfolio">
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                <label for="name">Nama</label>
+                <input type="text" id="name" name="name" placeholder="Nama Anda" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="email@example.com" required>
+
+                <label for="message">Pesan</label>
+                <textarea id="message" name="message" placeholder="Tulis pesan Anda" required></textarea>
+
+                <button class="button-link primary" type="submit">Kirim Pesan</button>
+                <p class="form-status" role="status" aria-live="polite"></p>
+            </form>
+            <div class="direct-contact">
+                <span>📨 Pesan dari formulir akan diteruskan ke email yang terhubung di Formspree.</span>
+                <a href="https://wa.me/6282341735852" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+            </div>
+            <div class="button-row">
+                <a class="button-link" href="index.html">Kembali</a>
+            </div>
+        </article>
+    </main>
+    <footer class="footer">
+        <p>© 2026 Alvin. Dibuat dengan HTML, CSS, dan JavaScript.</p>
+        <div class="social-links" aria-label="Tautan media sosial">
+            <a href="https://github.com/Nobless017" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://wa.me/6282341735852" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
