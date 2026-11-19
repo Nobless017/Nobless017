@@ -652,7 +652,7 @@ textarea:focus-visible {
 }
 
 .preview-two {
-    background: linear-gradient(135deg, #172033, #0f766e);
+    background: linear-gradient(135deg, #2a1b14, #c8742c);
 }
 
 .preview-three {
@@ -708,19 +708,6 @@ textarea:focus-visible {
     object-position: top center;
 }
 
-.mock-landing {
-    display: grid;
-    grid-template-columns: 1.25fr 1fr;
-    align-items: center;
-    gap: 12px;
-    padding: 14px;
-}
-
-.mock-landing-text {
-    display: grid;
-    gap: 7px;
-}
-
 .mock-line {
     display: block;
     flex: none;
@@ -733,26 +720,6 @@ textarea:focus-visible {
     width: 92%;
     height: 10px;
     background: #172033;
-}
-
-.mock-line-short {
-    width: 58%;
-}
-
-.mock-pill {
-    display: block;
-    width: 46%;
-    height: 13px;
-    margin-top: 4px;
-    border-radius: 99px;
-    background: #0f766e;
-}
-
-.mock-media {
-    display: block;
-    align-self: stretch;
-    border-radius: 9px;
-    background: linear-gradient(135deg, #ccfbf1, #2dd4bf);
 }
 
 .mock-phone {

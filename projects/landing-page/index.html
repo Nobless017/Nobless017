@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopi Sabana | Kedai Kopi Lokal di Kupang</title>
+    <meta name="description" content="Kopi Sabana, kedai kopi fiktif di Kupang dengan biji kopi lokal NTT. Proyek landing page portfolio oleh Alvin.">
+    <meta name="theme-color" content="#2a1b14">
+    <meta property="og:title" content="Kopi Sabana | Kedai Kopi Lokal di Kupang">
+    <meta property="og:description" content="Landing page kedai kopi fiktif di Kupang. Proyek portfolio oleh Alvin.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nobless017.github.io/projects/landing-page/">
+    <meta property="og:image" content="https://nobless017.github.io/img/project-landing.jpg">
+    <meta property="og:locale" content="id_ID">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <!-- Tandai bahwa JavaScript aktif, supaya CSS bisa menyembunyikan menu mobile & tab dengan aman -->
+    <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Langsung ke konten</a>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="#top">
+                <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
+                    <circle cx="32" cy="32" r="32" fill="#2a1b14"/>
+                    <g transform="translate(32 32) rotate(30)">
+                        <ellipse rx="13" ry="18" fill="#c8742c"/>
+                        <path d="M-2 -15 C8 -5 -8 5 2 15" fill="none" stroke="#2a1b14" stroke-width="3.5" stroke-linecap="round"/>
+                    </g>
+                </svg>
+                Kopi Sabana
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Buka navigasi">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Navigasi utama">
+                <a href="#menu">Menu</a>
+                <a href="#proses">Proses</a>
+                <a href="#lokasi">Lokasi</a>
+                <a href="#faq">FAQ</a>
+                <a class="btn btn-small" href="#lokasi">Mampir</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- ===== HERO ===== -->
+        <section class="hero" id="top">
+            <div class="container hero-inner">
+                <div class="hero-copy">
+                    <p class="eyebrow">Kedai kopi · Kota Kupang</p>
+                    <h1>Kopi lokal NTT, diseduh <span class="nowrap">pelan-pelan.</span></h1>
+                    <p class="lead">Biji kopi dari Bajawa dan Manggarai, kami sangrai sendiri setiap minggu. Tempat santai buat kerja, nugas, atau ngobrol sampai senja.</p>
+                    <div class="actions">
+                        <a class="btn" href="#menu">Lihat Menu</a>
+                        <a class="btn btn-ghost" href="#lokasi">Lokasi &amp; Jam Buka</a>
+                    </div>
+                    <ul class="hero-facts">
+                        <li><strong>100%</strong> biji kopi NTT</li>
+                        <li><strong>Tiap Senin</strong> sangrai baru</li>
+                        <li><strong>07.00</strong> buka setiap hari</li>
+                    </ul>
+                </div>
+
+                <!-- Ilustrasi cangkir kopi dari SVG (tanpa file gambar) -->
+                <div class="hero-art" aria-hidden="true">
+                    <svg viewBox="0 0 400 400">
+                        <circle cx="200" cy="215" r="170" fill="#efe2cf"/>
+                        <circle cx="200" cy="215" r="138" fill="none" stroke="#dfc9aa" stroke-width="2" stroke-dasharray="4 10"/>
+                        <!-- uap -->
+                        <g fill="none" stroke="#a88a74" stroke-width="7" stroke-linecap="round">
+                            <path class="steam" d="M168 132 C156 114 180 102 168 82"/>
+                            <path class="steam steam-2" d="M200 126 C188 106 212 94 200 70"/>
+                            <path class="steam steam-3" d="M232 132 C220 114 244 102 232 82"/>
+                        </g>
+                        <!-- piring -->
+                        <ellipse cx="200" cy="302" rx="132" ry="26" fill="#fffaf3" stroke="#2a1b14" stroke-width="6"/>
+                        <ellipse cx="200" cy="300" rx="74" ry="12" fill="#efe2cf"/>
+                        <!-- gagang -->
+                        <path d="M288 188 C334 186 336 256 282 258" fill="none" stroke="#2a1b14" stroke-width="12" stroke-linecap="round"/>
+                        <!-- badan cangkir -->
+                        <path d="M110 170 H290 V214 C290 266 252 298 200 298 C148 298 110 266 110 214 Z" fill="#fffaf3" stroke="#2a1b14" stroke-width="6" stroke-linejoin="round"/>
+                        <path d="M113 200 H287" stroke="#c8742c" stroke-width="10"/>
+                        <path d="M132 228 C140 254 162 272 194 278" fill="none" stroke="#efe2cf" stroke-width="8" stroke-linecap="round"/>
+                        <!-- permukaan kopi + latte art -->
+                        <ellipse cx="200" cy="170" rx="90" ry="16" fill="#4a2f22" stroke="#2a1b14" stroke-width="6"/>
+                        <path d="M200 181 C189 173 183 166 189 161 C194 157 199 160 200 165 C201 160 206 157 211 161 C217 166 211 173 200 181 Z" fill="#e9cfae"/>
+                        <!-- biji kopi -->
+                        <g transform="translate(74 334) rotate(-28)">
+                            <ellipse rx="15" ry="20" fill="#4a2f22"/>
+                            <path d="M-2 -17 C8 -6 -8 6 2 17" fill="none" stroke="#2a1b14" stroke-width="3" stroke-linecap="round"/>
+                        </g>
+                        <g transform="translate(332 342) rotate(24)">
+                            <ellipse rx="15" ry="20" fill="#4a2f22"/>
+                            <path d="M-2 -17 C8 -6 -8 6 2 17" fill="none" stroke="#2a1b14" stroke-width="3" stroke-linecap="round"/>
+                        </g>
+                        <g transform="translate(318 96) rotate(40) scale(0.8)">
+                            <ellipse rx="15" ry="20" fill="#4a2f22"/>
+                            <path d="M-2 -17 C8 -6 -8 6 2 17" fill="none" stroke="#2a1b14" stroke-width="3" stroke-linecap="round"/>
+                        </g>
+                    </svg>
+                    <span class="hero-tag hero-tag-1">Arabika Bajawa</span>
+                    <span class="hero-tag hero-tag-2">Sangrai tiap Senin</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== KEUNGGULAN ===== -->
+        <section class="section perks" aria-labelledby="perks-title">
+            <div class="container">
+                <h2 class="visually-hidden" id="perks-title">Kenapa ngopi di Kopi Sabana</h2>
+                <div class="perk-grid">
+                    <article class="perk">
+                        <span class="perk-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="6" ry="8.5" transform="rotate(30 12 12)"/><path d="M15.5 5.5C11 9 14 14 8.5 18.5"/></svg>
+                        </span>
+                        <h3>Biji kopi lokal</h3>
+                        <p>Arabika Bajawa dan Manggarai, dibeli langsung dari petani di Flores.</p>
+                    </article>
+                    <article class="perk">
+                        <span class="perk-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2.5 1.5-4 2.5-5 .3 1.8 1.2 2.8 2.5 3 0-3-1-5.5 0-8z"/></svg>
+                        </span>
+                        <h3>Disangrai sendiri</h3>
+                        <p>Kami sangrai dalam jumlah kecil tiap Senin, jadi kopimu selalu segar.</p>
+                    </article>
+                    <article class="perk">
+                        <span class="perk-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M3 9.5a13 13 0 0 1 18 0"/><path d="M6.5 13a8 8 0 0 1 11 0"/><path d="M10 16.5a3 3 0 0 1 4 0"/><path d="M12 20h.01"/></svg>
+                        </span>
+                        <h3>Nyaman buat nugas</h3>
+                        <p>Wi-Fi kencang, colokan di tiap meja, dan musik yang nggak bikin pusing.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== MENU (pakai tab) ===== -->
+        <section class="section menu" id="menu" aria-labelledby="menu-title">
+            <div class="container">
+                <div class="section-head">
+                    <p class="eyebrow">Menu</p>
+                    <h2 id="menu-title">Pilih teman ngopimu</h2>
+                    <p>Harga sudah termasuk pajak. Semua minuman susu bisa diganti susu oat (+Rp&nbsp;5.000).</p>
+                </div>
+
+                <div class="menu-tabs" role="tablist" aria-label="Kategori menu">
+                    <button class="menu-tab" type="button" role="tab" id="tab-kopi" aria-controls="panel-kopi" aria-selected="true">Kopi</button>
+                    <button class="menu-tab" type="button" role="tab" id="tab-nonkopi" aria-controls="panel-nonkopi" aria-selected="false" tabindex="-1">Non-kopi</button>
+                    <button class="menu-tab" type="button" role="tab" id="tab-makanan" aria-controls="panel-makanan" aria-selected="false" tabindex="-1">Makanan</button>
+                </div>
+
+                <div class="menu-panel" role="tabpanel" id="panel-kopi" aria-labelledby="tab-kopi" tabindex="0">
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <div class="menu-item-head">
+                                <h3>Kopi Susu Sabana <span class="menu-badge">Favorit</span></h3>
+                                <span class="menu-leader" aria-hidden="true"></span>
+                                <span class="menu-price">Rp 22.000</span>
+                            </div>
+                            <p>Espresso, susu segar, dan gula aren. Menu paling laris kami.</p>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-item-head">
+                                <h3>Americano Bajawa</h3>
+                                <span class="menu-leader" aria-hidden="true"></span>
+                                <span class="menu-price">Rp 20.000</span>
+                            </div>
+                            <p>Espresso arabika Bajawa dengan air, panas atau dingin. Ringan dengan rasa cokelat.</p>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-item-head">
+                                <h3>Cappuccino</h3>
+                                <span class="menu-leader" aria-hidden="true"></span>
+                                <span class="menu-price">Rp 25.000</span>
+                            </div>
+                            <p>Espresso dengan susu bertekstur lembut dan busa yang tebal.</p>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-item-head">
+                                <h3>V60 Manggarai</h3>
+                                <span class="menu-leader" aria-hidden="true"></span>
+                                <span class="menu-price">Rp 28.000</span>
+                            </div>
+                            <p>Seduh manual dengan rasa buah dan asam yang segar.</p>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-item-head">
+                                <h3>Kopi Tubruk</h3>
+                                <span class="menu-leader" aria-hidden="true"></span>
+                                <span class="menu-price">Rp 15.000</span>
+                            </div>
+                            <p>Cara klasik: bubuk kopi diseduh langsung, kuat dan pekat.</p>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-item-head">
+                                <h3>Affogato</h3>
+                                <span class="menu-leader" aria-hidden="true"></span>
+                                <span class="menu-price">Rp 30.000</span>
+                            </div>
+                            <p>Satu shot espresso yang dituang di atas es krim vanila.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="menu-panel" role="tabpanel" id="panel-nonkopi" aria-labelledby="tab-nonkopi" tabindex="0">
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <div class="menu-item-head">
+                                <h3>Cokelat Sabana</h3>
+                                <span class="menu-leader" aria-hidden="true"></span>
+                                <span class="menu-price">Rp 24.000</span>
+                            </div>
+                            <p>Cokelat hitam pekat dengan susu, panas atau dingin.</p>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-item-head">
+                                <h3>Matcha Latte</h3>
+                                <span class="menu-leader" aria-hidden="true"></span>
+                                <span class="menu-price">Rp 26.000</span>
+                            </div>
+                            <p>Matcha dengan susu segar, tingkat manisnya bisa diatur.</p>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-item-head">
+                                <h3>Teh Sereh Jahe</h3>
+                                <span class="menu-leader" aria-hidden="true"></span>
+                                <span class="menu-price">Rp 15.000</span>
+                            </div>
+                            <p>Teh hangat dengan sereh dan jahe. Pas buat musim hujan.</p>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-item-head">
+                                <h3>Es Jeruk Nipis Madu</h3>
+                                <span class="menu-leader" aria-hidden="true"></span>
+                                <span class="menu-price">Rp 16.000</span>
+                            </div>
+                            <p>Segar, asam-manis, dan tanpa gula pasir.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="menu-panel" role="tabpanel" id="panel-makanan" aria-labelledby="tab-makanan" tabindex="0">
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <div class="menu-item-head">
+                                <h3>Pisang Goreng Sambal Lu'at <span class="menu-badge">Khas NTT</span></h3>
+                                <span class="menu-leader" aria-hidden="true"></span>
+                                <span class="menu-price">Rp 15.000</span>
+                            </div>
+                            <p>Pisang goreng renyah dengan sambal lu'at yang pedas segar.</p>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-item-head">
+                                <h3>Roti Bakar Srikaya</h3>
+                                <span class="menu-leader" aria-hidden="true"></span>
+                                <span class="menu-price">Rp 18.000</span>
+                            </div>
+                            <p>Roti tebal, mentega, dan selai srikaya buatan sendiri.</p>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-item-head">
+                                <h3>Nasi Se'i Sapi <span class="menu-badge">Khas Kupang</span></h3>
+                                <span class="menu-leader" aria-hidden="true"></span>
+                                <span class="menu-price">Rp 35.000</span>
+                            </div>
+                            <p>Se'i sapi asap, nasi hangat, dan sambal lu'at.</p>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-item-head">
+                                <h3>Jagung Bose</h3>
+                                <span class="menu-leader" aria-hidden="true"></span>
+                                <span class="menu-price">Rp 25.000</span>
+                            </div>
+                            <p>Bubur jagung dengan kacang merah dan santan, masakan rumahan NTT.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROSES ===== -->
+        <section class="section process" id="proses" aria-labelledby="process-title">
+            <div class="container">
+                <div class="section-head">
+                    <p class="eyebrow">Dari kebun ke cangkir</p>
+                    <h2 id="process-title">Kami tahu dari mana kopimu berasal</h2>
+                </div>
+                <ol class="process-list">
+                    <li>
+                        <span class="process-num" aria-hidden="true">01</span>
+                        <h3>Dipetik di Flores</h3>
+                        <p>Ceri kopi merah dipetik petani di Bajawa dan Manggarai, lalu dijemur sampai kering.</p>
+                    </li>
+                    <li>
+                        <span class="process-num" aria-hidden="true">02</span>
+                        <h3>Disangrai di kedai</h3>
+                        <p>Setiap Senin kami sangrai dalam jumlah kecil, supaya aroma dan rasanya tetap segar.</p>
+                    </li>
+                    <li>
+                        <span class="process-num" aria-hidden="true">03</span>
+                        <h3>Diseduh untukmu</h3>
+                        <p>Barista menimbang dan menyeduh tiap cangkir. Mau espresso atau seduh manual, tinggal pilih.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ===== LOKASI & JAM BUKA ===== -->
+        <section class="section location" id="lokasi" aria-labelledby="location-title">
+            <div class="container location-inner">
+                <div>
+                    <p class="eyebrow">Lokasi &amp; jam buka</p>
+                    <h2 id="location-title">Mampir ke kedai</h2>
+                    <address>Jl. Sabana Raya No. 17<br>Kota Kupang, Nusa Tenggara Timur</address>
+                    <!-- Diisi oleh script.js: "Sedang buka" atau "Sedang tutup" -->
+                    <p class="open-status"></p>
+                    <!-- data-days: 0 = Minggu, 1 = Senin, ..., 6 = Sabtu -->
+                    <dl class="hours">
+                        <div data-days="1,2,3,4,5" data-open="07.00" data-close="22.00">
+                            <dt>Senin – Jumat</dt>
+                            <dd>07.00 – 22.00</dd>
+                        </div>
+                        <div data-days="6" data-open="07.00" data-close="23.00">
+                            <dt>Sabtu</dt>
+                            <dd>07.00 – 23.00</dd>
+                        </div>
+                        <div data-days="0" data-open="07.00" data-close="21.00">
+                            <dt>Minggu</dt>
+                            <dd>07.00 – 21.00</dd>
+                        </div>
+                    </dl>
+                    <p class="location-note">Parkir motor tersedia di depan kedai. Ruang atas bisa dipesan untuk diskusi atau acara kampus.</p>
+                </div>
+
+                <!-- Peta ilustrasi dari CSS -->
+                <div class="map-card" aria-hidden="true">
+                    <span class="map-park"></span>
+                    <span class="map-sea"></span>
+                    <span class="map-road map-road-h"></span>
+                    <span class="map-road map-road-v"></span>
+                    <span class="map-pin"></span>
+                    <span class="map-label">Kopi Sabana</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FAQ ===== -->
+        <section class="section faq" id="faq" aria-labelledby="faq-title">
+            <div class="container faq-inner">
+                <div class="section-head">
+                    <p class="eyebrow">FAQ</p>
+                    <h2 id="faq-title">Yang sering ditanyakan</h2>
+                </div>
+                <div class="faq-list">
+                    <details>
+                        <summary>Ada Wi-Fi dan colokan?</summary>
+                        <p>Ada. Wi-Fi gratis untuk semua pengunjung, dan setiap meja punya colokan.</p>
+                    </details>
+                    <details>
+                        <summary>Bisa reservasi tempat untuk acara?</summary>
+                        <p>Bisa. Ruang atas muat sekitar 25 orang dan sering dipakai untuk diskusi, rapat organisasi, atau acara kampus. Pesan paling lambat sehari sebelumnya.</p>
+                    </details>
+                    <details>
+                        <summary>Ada menu tanpa kafein atau tanpa susu sapi?</summary>
+                        <p>Ada. Coba Teh Sereh Jahe atau Es Jeruk Nipis Madu. Semua minuman susu juga bisa diganti susu oat.</p>
+                    </details>
+                    <details>
+                        <summary>Pembayarannya pakai apa saja?</summary>
+                        <p>Tunai, QRIS, dan kartu debit.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== AJAKAN PENUTUP ===== -->
+        <section class="cta" aria-labelledby="cta-title">
+            <div class="container">
+                <h2 id="cta-title">Senja di Kupang paling pas ditemani kopi.</h2>
+                <p>Kami tunggu di Jl. Sabana Raya No. 17.</p>
+                <div class="actions">
+                    <a class="btn" href="#lokasi">Lihat Lokasi</a>
+                    <a class="btn btn-ghost" href="#menu">Lihat Menu</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© 2026 Kopi Sabana. Kedai fiktif, dibuat sebagai proyek portfolio oleh Alvin.</p>
+            <a href="../../index.html">← Kembali ke portfolio</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
