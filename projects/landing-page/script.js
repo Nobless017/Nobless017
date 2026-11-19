@@ -7,7 +7,7 @@ const siteNav = document.querySelector("#site-nav");
 
 function setNavOpen(isOpen) {
     navToggle.setAttribute("aria-expanded", String(isOpen));
-    navToggle.setAttribute("aria-label", isOpen ? "Tutup navigasi" : "Buka navigasi");
+    navToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
     siteNav.classList.toggle("is-open", isOpen);
 }
 
@@ -83,14 +83,14 @@ if (tabs.length > 0) {
     selectTab(tabs.find((tab) => tab.getAttribute("aria-selected") === "true") || tabs[0]);
 }
 
-// ---------- 4. Status "Sedang buka / tutup" sesuai jam di Kupang ----------
+// ---------- 4. Status "Open now / Closed" sesuai jam di Kupang ----------
 // Kupang memakai WITA (UTC+8), jadi waktunya dihitung dari UTC,
 // supaya hasilnya benar walaupun pengunjung membuka dari zona waktu lain.
 const openStatus = document.querySelector(".open-status");
 const hourRows = Array.from(document.querySelectorAll(".hours [data-days]"));
 
 function toMinutes(time) {
-    const [hours, minutes] = time.split(".").map(Number);
+    const [hours, minutes] = time.split(":").map(Number); // "07:00" -> 7 jam, 0 menit
     return hours * 60 + minutes;
 }
 
@@ -115,14 +115,14 @@ function updateOpenStatus() {
 
     if (minutesNow >= toMinutes(open) && minutesNow < toMinutes(close)) {
         openStatus.dataset.state = "open";
-        openStatus.textContent = `Sedang buka · tutup pukul ${close} WITA`;
+        openStatus.textContent = `Open now · closes at ${close} WITA`;
     } else if (minutesNow < toMinutes(open)) {
         openStatus.dataset.state = "closed";
-        openStatus.textContent = `Sedang tutup · buka pukul ${open} WITA`;
+        openStatus.textContent = `Closed · opens at ${open} WITA`;
     } else {
         const tomorrowRow = findRowForDay((today + 1) % 7);
         openStatus.dataset.state = "closed";
-        openStatus.textContent = `Sedang tutup · buka besok pukul ${tomorrowRow.dataset.open} WITA`;
+        openStatus.textContent = `Closed · opens tomorrow at ${tomorrowRow.dataset.open} WITA`;
     }
 }
 

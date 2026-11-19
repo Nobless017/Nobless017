@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Catatan Keuangan Mahasiswa</title>
-    <meta name="description" content="Aplikasi web sederhana untuk mencatat pemasukan dan pengeluaran mahasiswa. Proyek portfolio oleh Alvin.">
+    <title>Money Tracker for Students</title>
+    <meta name="description" content="A simple web app for students to track income and expenses. A portfolio project by Alvin.">
     <meta name="theme-color" content="#4338ca">
-    <meta property="og:title" content="Catatan Keuangan Mahasiswa">
-    <meta property="og:description" content="Aplikasi web untuk mencatat pemasukan dan pengeluaran. Proyek portfolio oleh Alvin.">
+    <meta property="og:title" content="Money Tracker for Students">
+    <meta property="og:description" content="A web app to track income and expenses. A portfolio project by Alvin.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nobless017.github.io/projects/catatan-keuangan/">
     <meta property="og:image" content="https://nobless017.github.io/img/project-keuangan.jpg">
-    <meta property="og:locale" content="id_ID">
+    <meta property="og:locale" content="en_US">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,15 +27,15 @@
                     <span class="app-logo" aria-hidden="true">
                         <svg viewBox="0 0 24 24"><path d="M19 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0 0 4h14a2 2 0 0 1 2 2v3"/><path d="M3 5v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3"/><path d="M21 12h-4a2 2 0 0 0 0 4h4z"/></svg>
                     </span>
-                    Catatan Keuangan
+                    Money Tracker
                 </p>
-                <h1 class="month-label" id="month-label">Bulan ini</h1>
+                <h1 class="month-label" id="month-label">This month</h1>
             </div>
             <div class="month-nav">
-                <button class="icon-button" type="button" id="prev-month" aria-label="Bulan sebelumnya">
+                <button class="icon-button" type="button" id="prev-month" aria-label="Previous month">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
                 </button>
-                <button class="icon-button" type="button" id="next-month" aria-label="Bulan berikutnya">
+                <button class="icon-button" type="button" id="next-month" aria-label="Next month">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
                 </button>
             </div>
@@ -43,16 +43,16 @@
 
         <main class="app-main">
             <!-- ===== RINGKASAN BULAN ===== -->
-            <section class="summary-card" id="summary-card" aria-label="Ringkasan bulan ini">
-                <p class="summary-label">Sisa uang bulan ini</p>
+            <section class="summary-card" id="summary-card" aria-label="Monthly summary">
+                <p class="summary-label">Remaining this month</p>
                 <p class="summary-balance" id="balance">Rp 0</p>
                 <div class="summary-row">
                     <div class="summary-stat">
-                        <span>Pemasukan</span>
+                        <span>Income</span>
                         <strong id="total-income">Rp 0</strong>
                     </div>
                     <div class="summary-stat">
-                        <span>Pengeluaran</span>
+                        <span>Expenses</span>
                         <strong id="total-expense">Rp 0</strong>
                     </div>
                 </div>
@@ -62,44 +62,44 @@
 
             <!-- ===== PENGELUARAN PER KATEGORI ===== -->
             <section class="panel" aria-labelledby="category-title">
-                <h2 id="category-title">Pengeluaran per kategori</h2>
+                <h2 id="category-title">Spending by category</h2>
                 <ul class="category-list" id="category-list"></ul>
-                <p class="muted" id="category-empty">Belum ada pengeluaran di bulan ini.</p>
+                <p class="muted" id="category-empty">No expenses this month yet.</p>
             </section>
 
             <!-- ===== RIWAYAT TRANSAKSI ===== -->
             <section class="panel" aria-labelledby="history-title">
                 <div class="panel-head">
-                    <h2 id="history-title">Riwayat transaksi</h2>
-                    <div class="chip-group" role="group" aria-label="Filter transaksi">
-                        <button class="chip" type="button" data-filter="all" aria-pressed="true">Semua</button>
-                        <button class="chip" type="button" data-filter="income" aria-pressed="false">Masuk</button>
-                        <button class="chip" type="button" data-filter="expense" aria-pressed="false">Keluar</button>
+                    <h2 id="history-title">Transactions</h2>
+                    <div class="chip-group" role="group" aria-label="Filter transactions">
+                        <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+                        <button class="chip" type="button" data-filter="income" aria-pressed="false">Income</button>
+                        <button class="chip" type="button" data-filter="expense" aria-pressed="false">Expenses</button>
                     </div>
                 </div>
 
                 <!-- Diisi oleh script.js -->
                 <div id="transaction-list"></div>
 
-                <p class="muted filter-empty" id="filter-empty" hidden>Tidak ada transaksi untuk filter ini.</p>
+                <p class="muted filter-empty" id="filter-empty" hidden>No transactions match this filter.</p>
 
                 <div class="empty-state" id="empty-state" hidden>
                     <span class="empty-icon" aria-hidden="true">🧾</span>
-                    <p><strong>Belum ada transaksi di bulan ini.</strong></p>
-                    <p>Tekan tombol + di bawah untuk mulai mencatat.</p>
-                    <button class="btn btn-secondary" type="button" id="load-sample">Coba pakai data contoh</button>
+                    <p><strong>No transactions this month yet.</strong></p>
+                    <p>Tap the + button below to start tracking.</p>
+                    <button class="btn btn-secondary" type="button" id="load-sample">Try it with sample data</button>
                 </div>
             </section>
         </main>
 
         <footer class="app-footer">
-            <p>Data hanya tersimpan di browser ini. <button class="link-button" type="button" id="reset-data">Hapus semua data</button></p>
-            <p>Proyek portfolio oleh Alvin · <a href="../../index.html">Kembali ke portfolio</a></p>
+            <p>Your data is only stored in this browser. <button class="link-button" type="button" id="reset-data">Delete all data</button></p>
+            <p>A portfolio project by Alvin · <a href="../../index.html">Back to portfolio</a></p>
         </footer>
     </div>
 
     <!-- Tombol tambah (melayang di kanan bawah) -->
-    <button class="fab" type="button" id="open-form" aria-label="Tambah transaksi" aria-haspopup="dialog">
+    <button class="fab" type="button" id="open-form" aria-label="Add transaction" aria-haspopup="dialog">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
     </button>
 
@@ -107,16 +107,16 @@
     <dialog class="sheet" id="transaction-dialog" aria-labelledby="form-title">
         <form id="transaction-form" data-type="expense">
             <span class="sheet-handle" aria-hidden="true"></span>
-            <h2 id="form-title">Tambah transaksi</h2>
+            <h2 id="form-title">Add transaction</h2>
 
             <fieldset class="type-toggle">
-                <legend class="visually-hidden">Jenis transaksi</legend>
-                <label><input type="radio" name="type" value="expense" checked><span>Pengeluaran</span></label>
-                <label><input type="radio" name="type" value="income"><span>Pemasukan</span></label>
+                <legend class="visually-hidden">Transaction type</legend>
+                <label><input type="radio" name="type" value="expense" checked><span>Expense</span></label>
+                <label><input type="radio" name="type" value="income"><span>Income</span></label>
             </fieldset>
 
             <div class="field">
-                <label for="amount">Jumlah</label>
+                <label for="amount">Amount</label>
                 <div class="amount-input">
                     <span aria-hidden="true">Rp</span>
                     <input type="text" id="amount" name="amount" inputmode="numeric" autocomplete="off" placeholder="0" required>
@@ -124,25 +124,25 @@
             </div>
 
             <div class="field">
-                <label for="category">Kategori</label>
+                <label for="category">Category</label>
                 <select id="category" name="category" required></select>
             </div>
 
             <div class="field">
-                <label for="note">Catatan <em>(opsional)</em></label>
-                <input type="text" id="note" name="note" maxlength="60" placeholder="Contoh: makan siang di kantin">
+                <label for="note">Note <em>(optional)</em></label>
+                <input type="text" id="note" name="note" maxlength="60" placeholder="e.g. lunch at the canteen">
             </div>
 
             <div class="field">
-                <label for="date">Tanggal</label>
+                <label for="date">Date</label>
                 <input type="date" id="date" name="date" required>
             </div>
 
             <p class="form-error" id="form-error" role="alert"></p>
 
             <div class="sheet-actions">
-                <button class="btn btn-secondary" type="button" id="cancel-form">Batal</button>
-                <button class="btn btn-primary" type="submit">Simpan</button>
+                <button class="btn btn-secondary" type="button" id="cancel-form">Cancel</button>
+                <button class="btn btn-primary" type="submit">Save</button>
             </div>
         </form>
     </dialog>
@@ -150,7 +150,7 @@
     <!-- Notifikasi kecil di bawah layar -->
     <div class="toast" id="toast" role="status" hidden>
         <span id="toast-message"></span>
-        <button type="button" id="toast-undo">Batalkan</button>
+        <button type="button" id="toast-undo">Undo</button>
     </div>
 
     <script src="script.js"></script>

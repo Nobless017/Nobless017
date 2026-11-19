@@ -1,29 +1,29 @@
-// Catatan Keuangan: aplikasi pencatat pemasukan & pengeluaran.
+// Money Tracker: aplikasi pencatat pemasukan & pengeluaran.
 // Semua data disimpan di localStorage browser, jadi tidak butuh server.
 
 // ---------- 1. Daftar kategori ----------
 const CATEGORIES = {
     expense: [
-        { id: "makan", label: "Makan & Minum", icon: "🍜", color: "#f97316" },
-        { id: "transport", label: "Transportasi", icon: "🛵", color: "#0ea5e9" },
-        { id: "kos", label: "Kos & Tagihan", icon: "🏠", color: "#8b5cf6" },
-        { id: "kuliah", label: "Kuliah", icon: "📚", color: "#14b8a6" },
-        { id: "pulsa", label: "Pulsa & Internet", icon: "📱", color: "#6366f1" },
-        { id: "belanja", label: "Belanja", icon: "🛍️", color: "#ec4899" },
-        { id: "hiburan", label: "Hiburan", icon: "🎮", color: "#eab308" },
-        { id: "lainnya-keluar", label: "Lainnya", icon: "📦", color: "#64748b" }
+        { id: "makan", label: "Food & Drinks", icon: "🍜", color: "#f97316" },
+        { id: "transport", label: "Transport", icon: "🛵", color: "#0ea5e9" },
+        { id: "kos", label: "Rent & Bills", icon: "🏠", color: "#8b5cf6" },
+        { id: "kuliah", label: "School", icon: "📚", color: "#14b8a6" },
+        { id: "pulsa", label: "Phone & Internet", icon: "📱", color: "#6366f1" },
+        { id: "belanja", label: "Shopping", icon: "🛍️", color: "#ec4899" },
+        { id: "hiburan", label: "Entertainment", icon: "🎮", color: "#eab308" },
+        { id: "lainnya-keluar", label: "Other", icon: "📦", color: "#64748b" }
     ],
     income: [
-        { id: "kiriman", label: "Kiriman Orang Tua", icon: "💌", color: "#16a34a" },
-        { id: "kerja", label: "Kerja Sampingan", icon: "💼", color: "#0d9488" },
-        { id: "beasiswa", label: "Beasiswa", icon: "🎓", color: "#2563eb" },
-        { id: "lainnya-masuk", label: "Lainnya", icon: "💰", color: "#65a30d" }
+        { id: "kiriman", label: "Allowance", icon: "💌", color: "#16a34a" },
+        { id: "kerja", label: "Side Job", icon: "💼", color: "#0d9488" },
+        { id: "beasiswa", label: "Scholarship", icon: "🎓", color: "#2563eb" },
+        { id: "lainnya-masuk", label: "Other", icon: "💰", color: "#65a30d" }
     ]
 };
 
 function findCategory(id) {
     const all = [...CATEGORIES.expense, ...CATEGORIES.income];
-    return all.find((category) => category.id === id) || { label: "Lainnya", icon: "📦", color: "#64748b" };
+    return all.find((category) => category.id === id) || { label: "Other", icon: "📦", color: "#64748b" };
 }
 
 // ---------- 2. Simpan & baca data dari localStorage ----------
@@ -41,7 +41,7 @@ function loadTransactions() {
         const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
         return Array.isArray(saved) ? saved.filter(isValidTransaction) : [];
     } catch (error) {
-        console.warn("Data tidak bisa dibaca dari localStorage.", error);
+        console.warn("Could not read data from localStorage.", error);
         return [];
     }
 }
@@ -50,21 +50,17 @@ function saveTransactions() {
     try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(transactions));
     } catch (error) {
-        console.warn("Data tidak bisa disimpan ke localStorage.", error);
+        console.warn("Could not save data to localStorage.", error);
     }
 }
 
 let transactions = loadTransactions();
 
 // ---------- 3. Fungsi bantu: uang & tanggal ----------
-const rupiahFormat = new Intl.NumberFormat("id-ID", {
-    style: "currency",
-    currency: "IDR",
-    maximumFractionDigits: 0
-});
-
+// 25000 -> "Rp 25,000" dan -5000 -> "-Rp 5,000"
 function formatRupiah(amount) {
-    return rupiahFormat.format(amount);
+    const sign = amount < 0 ? "-" : "";
+    return `${sign}Rp ${Math.abs(amount).toLocaleString("en-US")}`;
 }
 
 // Tanggal disimpan sebagai teks "2026-11-19" supaya mudah dibandingkan
@@ -87,9 +83,9 @@ function daysAgo(count) {
 }
 
 function formatDayLabel(key) {
-    if (key === daysAgo(0)) return "Hari ini";
-    if (key === daysAgo(1)) return "Kemarin";
-    return parseDateKey(key).toLocaleDateString("id-ID", { weekday: "long", day: "numeric", month: "long" });
+    if (key === daysAgo(0)) return "Today";
+    if (key === daysAgo(1)) return "Yesterday";
+    return parseDateKey(key).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" });
 }
 
 function createId() {
@@ -175,7 +171,7 @@ function render() {
     const monthItems = transactions.filter((item) => item.date.startsWith(viewMonthKey()));
 
     monthLabel.textContent = new Date(viewYear, viewMonth, 1)
-        .toLocaleDateString("id-ID", { month: "long", year: "numeric" });
+        .toLocaleDateString("en-US", { month: "long", year: "numeric" });
     nextMonthButton.disabled = isCurrentMonth();
 
     renderSummary(monthItems);
@@ -195,16 +191,16 @@ function renderSummary(items) {
 
     if (items.length === 0) {
         summaryCard.dataset.state = "ok";
-        hintEl.textContent = "Belum ada transaksi di bulan ini.";
+        hintEl.textContent = "No transactions this month yet.";
     } else if (income === 0) {
         summaryCard.dataset.state = "over";
-        hintEl.textContent = "Belum ada pemasukan yang dicatat bulan ini.";
+        hintEl.textContent = "No income recorded this month yet.";
     } else if (expense > income) {
         summaryCard.dataset.state = "over";
-        hintEl.textContent = `Pengeluaran melebihi pemasukan sebesar ${formatRupiah(expense - income)}.`;
+        hintEl.textContent = `Expenses are ${formatRupiah(expense - income)} over your income.`;
     } else {
         summaryCard.dataset.state = percentUsed >= 80 ? "warning" : "ok";
-        hintEl.textContent = `Kamu sudah memakai ${percentUsed}% dari pemasukan bulan ini.`;
+        hintEl.textContent = `You've used ${percentUsed}% of this month's income.`;
     }
 }
 
@@ -261,7 +257,7 @@ function createTransactionItem(item) {
     const deleteButton = createEl("button", "delete-button");
     deleteButton.type = "button";
     deleteButton.innerHTML = TRASH_ICON; // ikon tetap, bukan input pengguna
-    deleteButton.setAttribute("aria-label", `Hapus ${category.label} ${formatRupiah(item.amount)}`);
+    deleteButton.setAttribute("aria-label", `Delete ${category.label} ${formatRupiah(item.amount)}`);
     deleteButton.addEventListener("click", () => deleteTransaction(item.id));
 
     const row = createEl("li", "transaction");
@@ -295,7 +291,7 @@ function renderHistory(items) {
     filterEmpty.hidden = items.length === 0 || visible.length > 0;
 }
 
-// ---------- 7. Hapus transaksi + tombol "Batalkan" ----------
+// ---------- 7. Hapus transaksi + tombol "Undo" ----------
 let lastDeleted = null;
 let toastTimer = 0;
 
@@ -318,7 +314,7 @@ function deleteTransaction(id) {
     transactions.splice(index, 1);
     saveTransactions();
     render();
-    showToast("Transaksi dihapus.", true);
+    showToast("Transaction deleted.", true);
 }
 
 toastUndo.addEventListener("click", () => {
@@ -327,7 +323,7 @@ toastUndo.addEventListener("click", () => {
     lastDeleted = null;
     saveTransactions();
     render();
-    showToast("Transaksi dikembalikan.");
+    showToast("Transaction restored.");
 });
 
 // ---------- 8. Form tambah transaksi ----------
@@ -355,10 +351,10 @@ form.elements.type.forEach((radio) => {
     radio.addEventListener("change", () => fillCategoryOptions(radio.value));
 });
 
-// Format angka saat diketik: 25000 -> 25.000
+// Format angka saat diketik: 25000 -> 25,000
 amountInput.addEventListener("input", () => {
     const digits = amountInput.value.replace(/\D/g, "").slice(0, 12);
-    amountInput.value = digits ? Number(digits).toLocaleString("id-ID") : "";
+    amountInput.value = digits ? Number(digits).toLocaleString("en-US") : "";
 });
 
 form.addEventListener("submit", (event) => {
@@ -366,7 +362,7 @@ form.addEventListener("submit", (event) => {
 
     const amount = Number(amountInput.value.replace(/\D/g, ""));
     if (!amount) {
-        formError.textContent = "Masukkan jumlah uang yang lebih dari 0.";
+        formError.textContent = "Enter an amount greater than 0.";
         amountInput.focus();
         return;
     }
@@ -390,7 +386,7 @@ form.addEventListener("submit", (event) => {
 
     dialog.close();
     render();
-    showToast(type === "income" ? "Pemasukan tersimpan." : "Pengeluaran tersimpan.");
+    showToast(type === "income" ? "Income saved." : "Expense saved.");
 });
 
 $("#open-form").addEventListener("click", openForm);
@@ -415,38 +411,38 @@ filterButtons.forEach((button) => {
 
 $("#reset-data").addEventListener("click", () => {
     if (transactions.length === 0) {
-        showToast("Belum ada data untuk dihapus.");
+        showToast("There's no data to delete yet.");
         return;
     }
-    if (!confirm("Hapus semua transaksi? Data yang sudah dihapus tidak bisa dikembalikan.")) return;
+    if (!confirm("Delete all transactions? This can't be undone.")) return;
 
     transactions = [];
     saveTransactions();
     render();
-    showToast("Semua data dihapus.");
+    showToast("All data deleted.");
 });
 
 // ---------- 10. Data contoh ----------
 // [berapa hari lalu, jenis, kategori, jumlah, catatan]
 const SAMPLE_DATA = [
-    [0, "expense", "makan", 18000, "Makan siang di kantin"],
-    [0, "expense", "transport", 10000, "Ojek ke kampus"],
-    [1, "expense", "pulsa", 55000, "Paket data bulanan"],
-    [2, "expense", "makan", 25000, "Kopi sambil nugas"],
-    [3, "expense", "kuliah", 32000, "Print & jilid laporan"],
-    [4, "income", "kerja", 300000, "Desain poster acara himpunan"],
-    [5, "expense", "makan", 45000, "Belanja bahan masak"],
-    [6, "expense", "hiburan", 40000, "Nonton bareng teman"],
-    [8, "expense", "transport", 20000, "Bensin motor"],
-    [10, "expense", "belanja", 85000, "Sandal dan kaos"],
-    [12, "expense", "makan", 22000, "Makan malam"],
-    [14, "expense", "kos", 650000, "Bayar kos"],
-    [15, "income", "kiriman", 1500000, "Kiriman bulanan"],
-    [20, "expense", "makan", 30000, "Makan bareng teman kelas"],
-    [25, "expense", "transport", 15000, "Ojek"],
-    [33, "expense", "kos", 650000, "Bayar kos"],
-    [34, "income", "kiriman", 1500000, "Kiriman bulanan"],
-    [38, "expense", "pulsa", 55000, "Paket data"]
+    [0, "expense", "makan", 18000, "Lunch at the canteen"],
+    [0, "expense", "transport", 10000, "Motorbike taxi to campus"],
+    [1, "expense", "pulsa", 55000, "Monthly data plan"],
+    [2, "expense", "makan", 25000, "Coffee while studying"],
+    [3, "expense", "kuliah", 32000, "Printing and binding a report"],
+    [4, "income", "kerja", 300000, "Poster design for a campus event"],
+    [5, "expense", "makan", 45000, "Groceries for cooking"],
+    [6, "expense", "hiburan", 40000, "Movie night with friends"],
+    [8, "expense", "transport", 20000, "Motorbike fuel"],
+    [10, "expense", "belanja", 85000, "Sandals and a T-shirt"],
+    [12, "expense", "makan", 22000, "Dinner"],
+    [14, "expense", "kos", 650000, "Monthly rent"],
+    [15, "income", "kiriman", 1500000, "Monthly allowance"],
+    [20, "expense", "makan", 30000, "Dinner with classmates"],
+    [25, "expense", "transport", 15000, "Motorbike taxi"],
+    [33, "expense", "kos", 650000, "Monthly rent"],
+    [34, "income", "kiriman", 1500000, "Monthly allowance"],
+    [38, "expense", "pulsa", 55000, "Data plan"]
 ];
 
 function loadSampleData() {
@@ -467,9 +463,10 @@ function loadSampleData() {
 sampleButton.addEventListener("click", loadSampleData);
 
 // ---------- 11. Mulai ----------
-// Link dengan "?contoh" (dipakai di portfolio) langsung mengisi data contoh
-// kalau aplikasi masih kosong.
-if (transactions.length === 0 && new URLSearchParams(window.location.search).has("contoh")) {
+// Link dengan "?demo" (dipakai di portfolio) langsung mengisi data contoh
+// kalau aplikasi masih kosong. "?contoh" tetap didukung untuk link lama.
+const params = new URLSearchParams(window.location.search);
+if (transactions.length === 0 && (params.has("demo") || params.has("contoh"))) {
     loadSampleData();
 } else {
     render();

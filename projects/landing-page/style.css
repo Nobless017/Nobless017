@@ -247,7 +247,7 @@ svg {
 }
 
 .hero h1 {
-    max-width: 12ch;
+    max-width: 15ch;
     font-size: clamp(42px, 6.4vw, 76px);
 }
 
@@ -650,7 +650,7 @@ svg {
 }
 
 .hours .is-today dt::after {
-    content: " · hari ini";
+    content: " · today";
 }
 
 .location-note {
