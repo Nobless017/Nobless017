@@ -10,7 +10,7 @@ function getPreferredTheme() {
             return savedTheme;
         }
     } catch (error) {
-        console.warn("Preferensi tema tidak dapat dibaca dari penyimpanan lokal.", error);
+        console.warn("Could not read the saved theme preference.", error);
     }
 
     return colorScheme.matches ? "dark" : "light";
@@ -22,9 +22,9 @@ function applyTheme(theme) {
 
     if (themeToggle) {
         themeToggle.textContent = isDark ? "☀️" : "🌙";
-        themeToggle.setAttribute("aria-label", isDark ? "Ubah tema terang" : "Ubah tema gelap");
+        themeToggle.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
         themeToggle.setAttribute("aria-pressed", String(isDark));
-        themeToggle.title = isDark ? "Gunakan tema terang" : "Gunakan tema gelap";
+        themeToggle.title = isDark ? "Use light theme" : "Use dark theme";
     }
 }
 
@@ -32,7 +32,7 @@ function saveTheme(theme) {
     try {
         localStorage.setItem(themeKey, theme);
     } catch (error) {
-        console.warn("Preferensi tema tidak dapat disimpan.", error);
+        console.warn("Could not save the theme preference.", error);
     }
 }
 
@@ -339,7 +339,7 @@ if (contactForm) {
         const formData = new FormData(contactForm);
 
         submitButton.disabled = true;
-        submitButton.textContent = "Mengirim...";
+        submitButton.textContent = "Sending...";
         contactForm.setAttribute("aria-busy", "true");
         status.classList.remove("is-visible");
 
@@ -363,19 +363,19 @@ if (contactForm) {
                         .filter(Boolean)
                         .join(" ")
                     : "";
-                showFormStatus(errors || "Pesan gagal dikirim. Coba lagi beberapa saat lagi.", "error");
+                showFormStatus(errors || "Your message could not be sent. Please try again in a moment.", "error");
                 return;
             }
 
             if (!result) {
-                throw new Error("Formspree mengembalikan respons yang tidak dikenali.");
+                throw new Error("Formspree returned an unexpected response.");
             }
 
-            showFormStatus("Pesan berhasil dikirim. Terima kasih sudah menghubungi saya!", "success");
+            showFormStatus("Message sent. Thanks for reaching out!", "success");
             contactForm.reset();
         } catch (error) {
-            console.error("Pengiriman formulir ke Formspree gagal.", error);
-            showFormStatus("Pesan belum terkirim. Periksa koneksi internet lalu coba lagi.", "error");
+            console.error("Sending the form to Formspree failed.", error);
+            showFormStatus("Message not sent. Check your internet connection and try again.", "error");
         } finally {
             submitButton.disabled = false;
             submitButton.textContent = defaultButtonLabel;

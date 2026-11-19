@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Page Not Found | Alvin</title>
+    <!-- GitHub Pages can show this page at any URL, so every link uses a path from the site root (/) -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/style.css">
+    <script>
+        (function () {
+            var theme;
+            try { theme = localStorage.getItem("theme"); } catch (error) {}
+            if (theme !== "light" && theme !== "dark") {
+                theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+            document.documentElement.dataset.theme = theme;
+        })();
+    </script>
+</head>
+<body>
+    <main class="page-shell">
+        <nav class="navbar" aria-label="Main navigation">
+            <a class="brand" href="/">Alvin<span>.</span></a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+            <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle theme">🌙</button>
+        </nav>
+
+        <article class="content-card">
+            <p class="eyebrow">ERROR 404</p>
+            <h1>Page not found</h1>
+            <p>The page you're looking for doesn't exist or may have moved. Let's get you back on track.</p>
+            <div class="button-row">
+                <a class="button-link primary" href="/">Back to Home</a>
+                <a class="button-link" href="/#projects">View Projects</a>
+            </div>
+        </article>
+    </main>
+    <footer class="footer">
+        <p>© 2026 Alvin. Built with HTML, CSS, and JavaScript.</p>
+        <div class="social-links" aria-label="Social links">
+            <a href="https://github.com/Nobless017" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://wa.me/6282341735852" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </div>
+    </footer>
+    <script src="/script.js"></script>
+</body>
+</html>

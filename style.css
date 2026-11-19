@@ -73,7 +73,7 @@ body {
     background:
         radial-gradient(circle at 10% 10%, rgba(20, 184, 166, 0.13), transparent 28rem),
         linear-gradient(135deg, var(--body-start) 0%, var(--body-end) 100%);
-    animation: pageFade 500ms ease-out;
+    animation: pageEnter 500ms ease-out;
     transition: color 220ms ease, background 220ms ease;
 }
 
@@ -88,13 +88,13 @@ body {
     background: var(--button-blue);
 }
 
-@keyframes pageFade {
+/* Halaman sedikit naik saat dibuka. Sengaja tanpa opacity: 0,
+   supaya konten tidak pernah tampil kosong kalau animasinya tertunda. */
+@keyframes pageEnter {
     from {
-        opacity: 0;
         transform: translateY(8px);
     }
     to {
-        opacity: 1;
         transform: translateY(0);
     }
 }
@@ -450,11 +450,6 @@ textarea:focus-visible {
         background-color 320ms var(--ease-smooth), border-color 320ms var(--ease-smooth);
 }
 
-.content-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-hover);
-}
-
 .content-card h1 {
     font-size: clamp(40px, 6vw, 56px);
 }
@@ -485,6 +480,37 @@ textarea:focus-visible {
 
 .info-grid span {
     color: var(--muted);
+}
+
+/* Bagian Skills di halaman About */
+.about-heading {
+    margin: 36px 0 16px;
+    font-size: clamp(24px, 3vw, 30px);
+    letter-spacing: -0.04em;
+    line-height: 1.2;
+}
+
+.skill-groups {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.skill-group {
+    padding: 18px;
+    background: var(--surface-soft);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+}
+
+.skill-group .skill-tags {
+    margin-top: 12px;
+}
+
+.content-card .skill-tags span {
+    color: var(--muted);
+    background: var(--tag-surface);
+    border: 1px solid var(--tag-border);
 }
 
 .contact-form {
@@ -564,6 +590,7 @@ textarea:focus-visible {
 
 .projects {
     padding: 35px 20px 80px;
+    scroll-margin-top: 70px; /* supaya judul tidak tertutup navbar saat dibuka lewat #projects */
 }
 
 .section-heading {
@@ -857,23 +884,6 @@ textarea:focus-visible {
     color: var(--blue);
 }
 
-.about-social {
-    margin-top: 18px;
-}
-
-.about-social a {
-    padding: 9px 12px;
-    border: 1px solid var(--card-border);
-    border-radius: 11px;
-    transition: transform 280ms var(--ease-smooth), color 280ms var(--ease-smooth),
-        background-color 280ms var(--ease-smooth), border-color 280ms var(--ease-smooth);
-}
-
-.about-social a:hover {
-    transform: translateY(-2px);
-    background: var(--active-surface);
-}
-
 .direct-contact {
     display: grid;
     gap: 10px;
@@ -1077,7 +1087,8 @@ textarea:focus-visible {
         padding: 28px 20px;
     }
 
-    .info-grid {
+    .info-grid,
+    .skill-groups {
         grid-template-columns: 1fr;
     }
 

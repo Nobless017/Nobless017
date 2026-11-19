@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tentang Alvin, mahasiswa Universitas Katolik Widya Mandira dan pengembang web.">
+    <meta name="description" content="About Alvin, a Computer Science student at Widya Mandira Catholic University and front-end web developer.">
     <meta property="og:title" content="About | Alvin">
-    <meta property="og:description" content="Tentang Alvin, mahasiswa Universitas Katolik Widya Mandira dan pengembang web.">
+    <meta property="og:description" content="Computer Science student at Widya Mandira Catholic University, focused on front-end web development.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nobless017.github.io/about.html">
     <meta property="og:image" content="https://nobless017.github.io/img/project-portfolio.jpg">
     <meta property="og:image:width" content="960">
     <meta property="og:image:height" content="540">
-    <meta property="og:image:alt" content="Tampilan halaman utama portfolio Alvin">
-    <meta property="og:locale" content="id_ID">
+    <meta property="og:image:alt" content="Homepage of Alvin's portfolio">
+    <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
     <title>About | Alvin</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -30,56 +30,90 @@
 </head>
 <body>
     <main class="page-shell">
-        <nav class="navbar" aria-label="Navigasi utama">
+        <nav class="navbar" aria-label="Main navigation">
             <a class="brand" href="index.html">Alvin<span>.</span></a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a class="active" href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </div>
-            <button class="theme-toggle" type="button" aria-label="Ubah tema gelap" title="Ubah tema">🌙</button>
+            <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle theme">🌙</button>
         </nav>
 
         <article class="content-card">
-            <p class="eyebrow">TENTANG SAYA</p>
+            <p class="eyebrow">ABOUT ME</p>
             <h1>About Me</h1>
-            <p>Nama saya Alvin, saya seorang mahasiswa di Universitas Katolik Widya Mandira. Saya tertarik dalam pengembangan web dan pemrograman.</p>
-            <p>Saya memiliki pengalaman dalam HTML, CSS, dan JavaScript. Saya juga tertarik mempelajari framework web modern seperti React dan Vue.js.</p>
+            <p>I'm Alvin, a Computer Science student in the Faculty of Engineering at Widya Mandira Catholic University in Kupang. I enjoy turning ideas into websites that are clear, fast, and comfortable to use on any screen.</p>
+            <p>So far I've built this portfolio, a landing page for a fictional coffee shop, and a mobile-first finance tracker for students. Next, I want to learn modern frameworks such as React and Vue.js.</p>
             <div class="info-grid">
                 <div>
-                    <strong>Frontend</strong>
-                    <span>HTML, CSS & JavaScript</span>
+                    <strong>Study</strong>
+                    <span>Computer Science, Faculty of Engineering</span>
                 </div>
                 <div>
-                    <strong>Minat</strong>
-                    <span>Desain dan aplikasi mobile</span>
+                    <strong>Focus</strong>
+                    <span>Front-end web development</span>
                 </div>
             </div>
-            <div class="timeline" aria-label="Perjalanan pendidikan dan keterampilan">
+
+            <h2 class="about-heading">Skills</h2>
+            <div class="skill-groups">
+                <div class="skill-group">
+                    <strong>Languages</strong>
+                    <div class="skill-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <strong>Tools</strong>
+                    <div class="skill-tags">
+                        <span>Git &amp; GitHub</span>
+                        <span>GitHub Pages</span>
+                        <span>VS Code</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <strong>I can build</strong>
+                    <div class="skill-tags">
+                        <span>Responsive layouts</span>
+                        <span>Light &amp; dark themes</span>
+                        <span>Contact forms</span>
+                        <span>Apps with localStorage</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <strong>Learning next</strong>
+                    <div class="skill-tags">
+                        <span>React</span>
+                        <span>Vue.js</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="about-heading">Journey</h2>
+            <div class="timeline">
                 <div class="timeline-item">
-                    <span>2024—Sekarang</span>
-                    <strong>Universitas Katolik Widya Mandira</strong>
-                    <p>Belajar teknologi, pemrograman, dan pengembangan solusi digital.</p>
+                    <span>2024 — Present</span>
+                    <strong>Widya Mandira Catholic University</strong>
+                    <p>Computer Science, Faculty of Engineering. Learning programming fundamentals and how to build digital solutions.</p>
                 </div>
                 <div class="timeline-item">
-                    <span>Saat Ini</span>
-                    <strong>Pengembangan Web</strong>
-                    <p>Membangun pengalaman web responsif dengan HTML, CSS, dan JavaScript.</p>
+                    <span>Now</span>
+                    <strong>Web Development</strong>
+                    <p>Building responsive websites and small web apps with HTML, CSS, and JavaScript, published on GitHub Pages.</p>
                 </div>
             </div>
             <div class="button-row">
-                <a class="button-link" href="index.html">Kembali</a>
-                <a class="button-link primary" href="contact.html">Hubungi Saya</a>
-            </div>
-            <div class="social-links about-social" aria-label="Tautan media sosial">
-                <a href="https://github.com/Nobless017" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://wa.me/6282341735852" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                <a class="button-link" href="index.html#projects">View Projects</a>
+                <a class="button-link primary" href="contact.html">Contact Me</a>
             </div>
         </article>
     </main>
     <footer class="footer">
-        <p>© 2026 Alvin. Dibuat dengan HTML, CSS, dan JavaScript.</p>
-        <div class="social-links" aria-label="Tautan media sosial">
+        <p>© 2026 Alvin. Built with HTML, CSS, and JavaScript.</p>
+        <div class="social-links" aria-label="Social links">
             <a href="https://github.com/Nobless017" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="https://wa.me/6282341735852" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </div>
