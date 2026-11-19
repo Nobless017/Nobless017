@@ -1,0 +1,7 @@
+# Simpan semua file teks dengan akhiran baris LF (standar web & GitHub)
+* text=auto eol=lf
+
+# File gambar jangan diubah sama sekali
+*.jpg binary
+*.jpeg binary
+*.png binary
